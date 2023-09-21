@@ -210,7 +210,7 @@ public class SuspectsController : BaseController
     
 
     /// <summary>
-    /// Delete - Delete an existing Suspect - Delete
+    /// Delete - Remove an existing Suspect
     /// </summary>
     /// <param name="id">Suspect Id for deletion</param>
     /// <remarks>Delete existing Suspect </remarks>
