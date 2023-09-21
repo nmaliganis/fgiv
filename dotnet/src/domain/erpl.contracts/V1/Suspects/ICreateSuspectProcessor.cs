@@ -7,5 +7,5 @@ namespace erpl.contracts.V1.Suspects;
 
 public interface ICreateSuspectProcessor
 {
-    Task<BusinessResult<SuspectDto>> CreateSuspectAsync(CreateSuspectCommand createCommand);
+    Task<BusinessResult<SuspectDto>> CreateSuspectAsync(CreateSuspectCommand cmd);
 }

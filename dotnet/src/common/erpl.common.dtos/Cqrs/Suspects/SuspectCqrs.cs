@@ -25,7 +25,7 @@ public class GetSuspectsQuery : GetSuspectsResourceParameters, IRequest<Business
 public record CreateSuspectCommand(CreateSuspectResourceParameters SuspectForCreationParameters)
     : IRequest<BusinessResult<SuspectDto>>;
 
-public record UpdateSuspectCommand(string SuspectIdToBeModified)
+public record UpdateSuspectCommand(string SuspectIdToBeModified, UpdateSuspectResourceParameters SuspectForModificationParameters)
     : IRequest<BusinessResult<SuspectModificationDto>>;
 
 public record DeleteSuspectCommand(string SuspectIdToBeDeleted)

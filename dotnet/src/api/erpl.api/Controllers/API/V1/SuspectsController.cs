@@ -13,7 +13,6 @@ using erpl.common.infrastructure.PropertyMappings;
 using erpl.common.infrastructure.TypeHelpers;
 using erpl.model.Suspects;
 using MediatR;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Serilog;
 
@@ -61,7 +60,6 @@ public class SuspectsController : BaseController
     /// <param name="mediaType"></param>
     /// <remarks>Fetch all Suspects </remarks>
     /// <response code="200">Resource retrieved correctly</response>
-    /// <response code="401">Unauthorized</response>
     /// <response code="404">Resource Not Found</response>
     /// <response code="500">Internal Server Error.</response>
     [HttpGet(Name = "FetchSuspectsRoot")]
@@ -113,7 +111,6 @@ public class SuspectsController : BaseController
     /// <param name="id">Suspect Id for fetching</param>
     /// <remarks>Fetch one Suspect </remarks>
     /// <response code="200">Resource retrieved correctly</response>
-    /// <response code="401">Unauthorized</response>
     /// <response code="404">Resource Not Found</response>
     /// <response code="500">Internal Server Error.</response>
     [HttpGet("{id}", Name = "GetSuspectByIdAsync")]
@@ -149,8 +146,6 @@ public class SuspectsController : BaseController
     /// <param name="suspectForCreationParameters">CreateSuspectResourceParameters for creation</param>
     /// <remarks>Create Suspect </remarks>
     /// <response code="201">Resource Creation Finished</response>
-    /// <response code="204">Resource No Content</response>
-    /// <response code="401">Resource Unauthorized</response>
     /// <response code="404">Resource Not Found</response>
     /// <response code="500">Internal Server Error.</response>
     [HttpPost(Name = "CreateSuspectRoot")]
@@ -184,8 +179,6 @@ public class SuspectsController : BaseController
     /// <param name="request">UpdateSuspectResourceParameters for modification</param>
     /// <remarks>Update Suspect </remarks>
     /// <response code="200">Resource Modification Finished</response>
-    /// <response code="204">Resource No Content</response>
-    /// <response code="401">Resource Unauthorized</response>
     /// <response code="404">Resource Not Found</response>
     /// <response code="500">Internal Server Error.</response>
     [HttpPut("{id}", Name = "UpdateSuspectAsync")]
@@ -195,7 +188,7 @@ public class SuspectsController : BaseController
     [ProducesResponseType(typeof(string), (int)HttpStatusCode.BadRequest)]
     public async Task<IActionResult> UpdateSuspectAsync(string id, [FromBody] UpdateSuspectResourceParameters request)
     {
-        var response = await this._mediator.Send(new UpdateSuspectCommand(id));
+        var response = await this._mediator.Send(new UpdateSuspectCommand(id, request));
 
         if (response.IsNull())
         {
@@ -222,8 +215,6 @@ public class SuspectsController : BaseController
     /// <param name="id">Suspect Id for deletion</param>
     /// <remarks>Delete existing Suspect </remarks>
     /// <response code="200">Resource Deletion Finished</response>
-    /// <response code="204">Resource No Content</response>
-    /// <response code="401">Resource Unauthorized</response>
     /// <response code="404">Resource Not Found</response>
     /// <response code="500">Internal Server Error.</response>
     [HttpDelete("{id}", Name = "DeleteSuspectAsync")]

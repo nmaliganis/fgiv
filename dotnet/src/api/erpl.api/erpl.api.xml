@@ -102,7 +102,6 @@
             <param name="mediaType"></param>
             <remarks>Fetch all Suspects </remarks>
             <response code="200">Resource retrieved correctly</response>
-            <response code="401">Unauthorized</response>
             <response code="404">Resource Not Found</response>
             <response code="500">Internal Server Error.</response>
         </member>
@@ -113,7 +112,6 @@
             <param name="id">Suspect Id for fetching</param>
             <remarks>Fetch one Suspect </remarks>
             <response code="200">Resource retrieved correctly</response>
-            <response code="401">Unauthorized</response>
             <response code="404">Resource Not Found</response>
             <response code="500">Internal Server Error.</response>
         </member>
@@ -124,8 +122,6 @@
             <param name="suspectForCreationParameters">CreateSuspectResourceParameters for creation</param>
             <remarks>Create Suspect </remarks>
             <response code="201">Resource Creation Finished</response>
-            <response code="204">Resource No Content</response>
-            <response code="401">Resource Unauthorized</response>
             <response code="404">Resource Not Found</response>
             <response code="500">Internal Server Error.</response>
         </member>
@@ -137,8 +133,6 @@
             <param name="request">UpdateSuspectResourceParameters for modification</param>
             <remarks>Update Suspect </remarks>
             <response code="200">Resource Modification Finished</response>
-            <response code="204">Resource No Content</response>
-            <response code="401">Resource Unauthorized</response>
             <response code="404">Resource Not Found</response>
             <response code="500">Internal Server Error.</response>
         </member>
@@ -149,8 +143,6 @@
             <param name="id">Suspect Id for deletion</param>
             <remarks>Delete existing Suspect </remarks>
             <response code="200">Resource Deletion Finished</response>
-            <response code="204">Resource No Content</response>
-            <response code="401">Resource Unauthorized</response>
             <response code="404">Resource Not Found</response>
             <response code="500">Internal Server Error.</response>
         </member>

@@ -15,7 +15,6 @@ public class PropertyMappingService : BasePropertyMapping
       { "Gender", new PropertyMappingValue(new List<string>() { "Gender" }) },
       { "Firstname", new PropertyMappingValue(new List<string>() { "Firstname" }) },
       { "Lastname", new PropertyMappingValue(new List<string>() { "Lastname" }) },
-      { "Lastname", new PropertyMappingValue(new List<string>() { "Lastname" }) },
       { "Title", new PropertyMappingValue(new List<string>() { "Title" }) },
       { "Calls", new PropertyMappingValue(new List<string>() { "Calls" }) },
       { "Dob", new PropertyMappingValue(new List<string>() { "Dob" }) },

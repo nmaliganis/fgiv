@@ -8,6 +8,7 @@ namespace erpl.contracts.ContractRepositories;
 public interface ISuspectRepository
 {
     Task<Suspect> FindOneSuspectById(string idSuspect);
+    Task<Suspect> FindOneSuspectByFirstnameAndLastname(string firstname, string lastname);
 
     Task CreateSuspect(Suspect newSuspect);
     Task UpdateSuspect(Suspect modifiedSuspect);
