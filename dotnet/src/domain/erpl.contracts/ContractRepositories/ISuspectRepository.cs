@@ -11,7 +11,7 @@ public interface ISuspectRepository
     Task<Suspect> FindOneSuspectByFirstnameAndLastname(string firstname, string lastname);
 
     Task CreateSuspect(Suspect newSuspect);
-    Task UpdateSuspect(Suspect modifiedSuspect);
+    Task UpdateSuspect(string idSuspect, Suspect modifiedSuspect);
     Task DeleteSuspect(string idSuspect);
 
     Task<QueryResult<Suspect>> FindSuspectsPagedOf(int? pageNum, int? pageSize);

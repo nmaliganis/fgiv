@@ -7,5 +7,5 @@ namespace erpl.contracts.V1.Suspects;
 
 public interface IDeleteSuspectProcessor
 {
-    Task<BusinessResult<SuspectDeletionDto>> DeleteSuspectAsync(DeleteSuspectCommand deleteCommand);
+    Task<BusinessResult<SuspectDto>> DeleteSuspectAsync(DeleteSuspectCommand deleteCommand);
 }

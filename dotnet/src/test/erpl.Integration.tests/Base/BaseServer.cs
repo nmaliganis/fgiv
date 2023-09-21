@@ -5,24 +5,23 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.TestHost;
 using Microsoft.Extensions.Configuration;
 
-namespace erpl.Integration.tests.Base {
-    public abstract class BaseServer {
-        public TestServer CreateServerAuthenticactionService() {
-            var path = Assembly.GetAssembly(typeof(BaseServer))
-                .Location;
+namespace erpl.Integration.tests.Base;
 
-            var hostBuilder = new WebHostBuilder()
-                .UseContentRoot(Path.GetDirectoryName(path))
-                .ConfigureAppConfiguration(cb => {
-                    cb.AddJsonFile("appsettings.json", optional: true)
-                        .AddEnvironmentVariables();
-                })
-                .UseStartup<Startup>();
+public abstract class BaseServer {
+    public TestServer CreateServerAuthenticactionService() {
+        var path = Assembly.GetAssembly(typeof(BaseServer))
+            .Location;
 
+        var hostBuilder = new WebHostBuilder()
+            .UseContentRoot(Path.GetDirectoryName(path))
+            .ConfigureAppConfiguration(cb => {
+                cb.AddJsonFile("appsettings.json", optional: true)
+                    .AddEnvironmentVariables();
+            })
+            .UseStartup<Startup>();
 
-            var testServer = new TestServer(hostBuilder);
+        var testServer = new TestServer(hostBuilder);
 
-            return testServer;
-        }
+        return testServer;
     }
 }

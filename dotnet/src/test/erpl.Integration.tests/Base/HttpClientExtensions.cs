@@ -4,25 +4,25 @@ using System.Net.Http.Headers;
 using Microsoft.AspNetCore.TestHost;
 using Microsoft.Extensions.Configuration;
 
-namespace erpl.Integration.tests.Base {
-    public static class HttpClientExtensions {
-        public static HttpClient CreateIdempotentClient(this TestServer server, string token = null) {
-            var config = new ConfigurationBuilder()
-              .AddJsonFile("appsettings.json")
-              .Build();
+namespace erpl.Integration.tests.Base;
 
-            var client = server.CreateClient();
+public static class HttpClientExtensions {
+    public static HttpClient CreateIdempotentClient(this TestServer server, string token = null) {
+        var config = new ConfigurationBuilder()
+            .AddJsonFile("appsettings.json")
+            .Build();
 
-            client.BaseAddress = new Uri(config["ExternalAppApiBaseUrl"]);
-            client.DefaultRequestHeaders.Accept.Clear();
-            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+        var client = server.CreateClient();
 
-            if (token != null) {
-                client.DefaultRequestHeaders.Authorization =
-          new AuthenticationHeaderValue("Bearer", token);
-            }
+        client.BaseAddress = new Uri(config["ExternalAppApiBaseUrl"]);
+        client.DefaultRequestHeaders.Accept.Clear();
+        client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-            return client;
+        if (token != null) {
+            client.DefaultRequestHeaders.Authorization =
+                new AuthenticationHeaderValue("Bearer", token);
         }
+
+        return client;
     }
 }

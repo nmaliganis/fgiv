@@ -26,7 +26,7 @@ public record CreateSuspectCommand(CreateSuspectResourceParameters SuspectForCre
     : IRequest<BusinessResult<SuspectDto>>;
 
 public record UpdateSuspectCommand(string SuspectIdToBeModified, UpdateSuspectResourceParameters SuspectForModificationParameters)
-    : IRequest<BusinessResult<SuspectModificationDto>>;
+    : IRequest<BusinessResult<SuspectDto>>;
 
 public record DeleteSuspectCommand(string SuspectIdToBeDeleted)
-    : IRequest<BusinessResult<SuspectDeletionDto>>;
+    : IRequest<BusinessResult<SuspectDto>>;

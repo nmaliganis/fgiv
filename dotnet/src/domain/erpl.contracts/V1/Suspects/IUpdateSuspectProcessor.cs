@@ -7,5 +7,5 @@ namespace erpl.contracts.V1.Suspects;
 
 public interface IUpdateSuspectProcessor
 {
-    Task<BusinessResult<SuspectModificationDto>> UpdateSuspectAsync(UpdateSuspectCommand updateCommand);
+    Task<BusinessResult<SuspectDto>> UpdateSuspectAsync(UpdateSuspectCommand updateCommand);
 }

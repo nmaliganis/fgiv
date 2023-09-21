@@ -9,14 +9,14 @@ using MediatR;
 namespace erpl.services.V1.Suspects;
 
 public class DeleteSuspectProcessor : IDeleteSuspectProcessor, IRequestHandler<DeleteSuspectCommand,
-    BusinessResult<SuspectDeletionDto>>
+    BusinessResult<SuspectDto>>
 {
-    public Task<BusinessResult<SuspectDeletionDto>> DeleteSuspectAsync(DeleteSuspectCommand deleteCommand)
+    public Task<BusinessResult<SuspectDto>> DeleteSuspectAsync(DeleteSuspectCommand deleteCommand)
     {
         throw new System.NotImplementedException();
     }
 
-    public Task<BusinessResult<SuspectDeletionDto>> Handle(DeleteSuspectCommand request, CancellationToken cancellationToken)
+    public Task<BusinessResult<SuspectDto>> Handle(DeleteSuspectCommand request, CancellationToken cancellationToken)
     {
         throw new System.NotImplementedException();
     }
