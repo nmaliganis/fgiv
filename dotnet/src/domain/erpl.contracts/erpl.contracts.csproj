@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <PackageId>erpl.contracts</PackageId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\common\erpl.common.dtos\erpl.common.dtos.csproj" />
+    <ProjectReference Include="..\..\common\erpl.common.infrastructure\erpl.common.infrastructure.csproj" />
+    <ProjectReference Include="..\erpl.model\erpl.model.csproj" />
+  </ItemGroup>
+</Project>
