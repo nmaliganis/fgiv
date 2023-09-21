@@ -105,7 +105,7 @@ public class SuspectRepository : ISuspectRepository
         catch (Exception e)
         {
             Log.Error(
-                $"Insertion Error:{e.Message} and {e.InnerException}");
+                $"Deletion Error:{e.Message} and {e.InnerException}");
             throw;
         }
     }
