@@ -1,9 +1,9 @@
-import auth from "./auth";
 import { createRouter, createWebHashHistory } from "vue-router";
 
 import Home from "./views/home-page";
-import Tasks from "./views/tasks-page";
+import Tasks from "./views/suspects-page.vue";
 import defaultLayout from "./layouts/side-nav-inner-toolbar";
+import auth from "@/auth";
 
 
 const router = new createRouter({
@@ -12,7 +12,7 @@ const router = new createRouter({
       path: "/home",
       name: "home",
       meta: {
-        requiresAuth: true,
+        requiresAuth: false,
         layout: defaultLayout
       },
       component: Home
@@ -21,7 +21,7 @@ const router = new createRouter({
       path: "/suspects",
       name: "suspects",
       meta: {
-        requiresAuth: true,
+        requiresAuth: false,
         layout: defaultLayout
       },
       component: Tasks
@@ -43,7 +43,6 @@ const router = new createRouter({
 });
 
 router.beforeEach((to, from, next) => {
-
   if (to.matched.some(record => record.meta.requiresAuth)) {
     if (!auth.loggedIn()) {
       next({

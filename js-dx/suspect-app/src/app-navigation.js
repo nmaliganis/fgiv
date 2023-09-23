@@ -6,7 +6,7 @@ export default [
   },
   {
     text: "Application",
-    icon: "home",
+    icon: "search",
     items: [
       {
         text: "Suspects",

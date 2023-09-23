@@ -7,10 +7,12 @@ import themes from "devextreme/ui/themes";
 
 import App from "./App";
 import appInfo from "./app-info";
+import store from "@/store";
 
 themes.initialized(() => {
     const app = createApp(App);
     app.use(router);
+    app.use(store);
     app.config.globalProperties.$appInfo = appInfo;
     app.mount('#app');
 });
