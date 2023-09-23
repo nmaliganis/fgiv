@@ -22,3 +22,5 @@ dotnet/src/domain/erpl.model/obj
 dotnet/src/domain/erpl.repository/bin/Debug/net6.0
 dotnet/src/domain/erpl.repository/obj/Debug/net6.0
 dotnet/src/domain/erpl.repository/obj
+ts-dx/suspect-app/node_modules
+ts/suspect-app/.idea

@@ -138,7 +138,7 @@
         </member>
         <member name="M:erpl.api.Controllers.API.V1.SuspectsController.DeleteSuspectAsync(System.String)">
             <summary>
-            Delete - Delete an existing Suspect - Delete
+            Delete - Remove an existing Suspect
             </summary>
             <param name="id">Suspect Id for deletion</param>
             <remarks>Delete existing Suspect </remarks>
@@ -239,11 +239,6 @@
             </summary>
             <param name="app"></param>
             <param name="env"></param>
-        </member>
-        <member name="T:erpl.api.Validators.ValidateModelAttribute">
-            <summary>
-            Class
-            </summary>
         </member>
     </members>
 </doc>
