@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "Hash": "Iwea6/rWuhGZHNl4LLG9rRxe1kbduLyw6fhg7C+6ds4=",
+  "Source": "erpl.api",
+  "BasePath": "_content/erpl.api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "erpl.api\\wwwroot",
+      "Source": "erpl.api",
+      "ContentRoot": "C:\\dev\\2024\\eu\\FG4\\fgiv\\dotnet\\src\\erpl.api\\wwwroot\\",
+      "BasePath": "_content/erpl.api",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\dev\\2024\\eu\\FG4\\fgiv\\dotnet\\src\\erpl.api\\wwwroot\\Wiretaps.json",
+      "SourceId": "erpl.api",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\dev\\2024\\eu\\FG4\\fgiv\\dotnet\\src\\erpl.api\\wwwroot\\",
+      "BasePath": "_content/erpl.api",
+      "RelativePath": "Wiretaps.json",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Wiretaps.json"
+    }
+  ]
+}

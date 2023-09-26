@@ -1,0 +1,25 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\dev\\2024\\eu\\FG4\\fgiv\\dotnet\\src\\erpl.api\\wwwroot\\Wiretaps.json",
+      "PackagePath": "staticwebassets\\Wiretaps.json"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.erpl.api.props",
+      "PackagePath": "build\\erpl.api.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.erpl.api.props",
+      "PackagePath": "buildMultiTargeting\\erpl.api.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildTransitive.erpl.api.props",
+      "PackagePath": "buildTransitive\\erpl.api.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.erpl.api.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

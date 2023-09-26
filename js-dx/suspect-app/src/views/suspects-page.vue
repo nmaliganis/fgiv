@@ -6,11 +6,19 @@
       class="dx-card wide-card"
       :data-source="suspectsItems"
       :focused-row-index="0"
-      :show-borders="false"
       :focused-row-enabled="true"
       :column-auto-width="true"
       :column-hiding-enabled="true"
+      :remote-operations="false"
+      :allow-column-reordering="true"
+      :row-alternation-enabled="true"
+      :show-borders="true"
+      :width="'100%'"
+      @selection-changed="onSelectionChanged"
     >
+      <DxSelection
+          mode="single"
+      />
       <dx-paging :page-size="10" />
       <dx-pager :show-page-size-selector="true" :show-info="true" />
       <dx-filter-row :visible="true" />
@@ -47,6 +55,7 @@
       <dx-column
         data-field="Dob"
         caption="Dob"
+        datatype="date"
       />
 
       <dx-column
@@ -76,6 +85,7 @@
 import { mapGetters, mapActions } from "vuex";
 import "devextreme/data/odata/store";
 import DxDataGrid, {
+  DxSelection,
   DxColumn,
   DxFilterRow,
   DxPager,
@@ -100,11 +110,30 @@ export default {
   },
   methods: {
     ...mapActions(["getSuspectsItems"]),
+    onSelectionChanged({ selectedRowsData }) {
+      console.log(selectedRowsData[0])
+      this.currentSuspect = selectedRowsData[0];
+      this.currentSuspectId = this.currentSuspect?.Id;
+    },
   },
   mounted() {
     this.getSuspectsItems();
   },
+  watch: {
+    isLoadSuspects(val) {
+      if (val === true) {
+        this.currentSuspect = this.suspectsItems[0];
+      }
+    }
+  },
+  data() {
+    return {
+      currentSuspect: null,
+      currentSuspectId: '',
+      };
+    },
   components: {
+    DxSelection,
     DxDataGrid,
     DxColumn,
     DxFilterRow,
